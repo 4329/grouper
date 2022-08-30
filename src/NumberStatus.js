@@ -7,6 +7,7 @@ class NumberStatus extends React.Component {
         let newState = this.constructArray(7);
         newState.groupSize = 7;
         newState.currentIdx = 0;
+        newState.total = 0;
         newState.nextNumber = newState.vals[0];
         this.state = newState;
 
@@ -23,9 +24,14 @@ class NumberStatus extends React.Component {
 
                 <button onClick={() => this.getNextNumber()}>New number</button>
 
-                <div className="field-group">
+                <div className="display-number">
                     <label>Next Number</label>
                     <div className="number">{this.state.nextNumber}</div>
+                </div>
+
+                <div className="count">
+                    <label>Total Count:</label>
+                    <div className="number">{this.state.total}</div>
                 </div>
            </div>
        );
@@ -49,6 +55,7 @@ class NumberStatus extends React.Component {
          newState.currentIdx = this.state.currentIdx + 1;
          newState.nextNumber = this.state.vals[this.state.currentIdx + 1];
        }
+       newState.total = this.state.total + 1;
 
 
        this.setState(newState);
