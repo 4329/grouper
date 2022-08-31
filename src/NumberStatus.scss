@@ -1,0 +1,46 @@
+.status-container {
+    display: flex;
+    flex-direction: row;
+
+    .admin-container {
+        display:flex;
+        flex-direction: column;
+        margin: 50px 200px 50px 0;
+
+        .field-group {
+            margin-bottom: 2rem;
+            input {
+                margin-left: 16px;
+                max-width: 50px;
+                font-size: 16px;
+                padding: 4px;
+            }
+        }
+
+        button {
+            margin-bottom: 16px;
+        }
+
+        .count {
+            display:flex;
+            flex-direction: row;
+            label {
+                margin-right: 16px;
+            }
+        }
+    }
+
+    .display-number {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        label {
+            font-size: 2.5rem;
+        }
+        .number {
+            font-size: 5rem;
+        }
+    }
+
+
+}

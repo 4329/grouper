@@ -1,13 +1,14 @@
 import React from "react";
+import "./NumberStatus.scss";
 
 class NumberStatus extends React.Component {
 
     constructor(props) {
         super(props);
         let newState = this.constructArray(7);
-        newState.groupSize = 7;
+        newState.groupSize = 12;
         newState.currentIdx = 0;
-        newState.total = 0;
+        newState.total = 1;
         newState.nextNumber = newState.vals[0];
         this.state = newState;
 
@@ -17,23 +18,24 @@ class NumberStatus extends React.Component {
    render() {
        return (
            <div className="status-container">
-                <div className="field-group">
-                    <label>Group Size:</label>
-                    <input type="number" value={this.state.groupSize} onChange={this.groupSizeChanged} />
+               <div className="admin-container">
+                    <div className="field-group">
+                        <label>Group Size:</label>
+                        <input type="number" value={this.state.groupSize} onChange={this.groupSizeChanged} />
+                    </div>
+
+                    <button onClick={() => this.getNextNumber()}>New number</button>
+                    <div className="count">
+                        <label>Total Count:</label>
+                        <div className="number">{this.state.total}</div>
+                    </div>
                 </div>
-
-                <button onClick={() => this.getNextNumber()}>New number</button>
-
+ 
                 <div className="display-number">
-                    <label>Next Number</label>
+                    <label>Your Number</label>
                     <div className="number">{this.state.nextNumber}</div>
                 </div>
-
-                <div className="count">
-                    <label>Total Count:</label>
-                    <div className="number">{this.state.total}</div>
-                </div>
-           </div>
+          </div>
        );
    }
 
